@@ -1,0 +1,77 @@
+---
+format:
+  docx:
+    reference-doc: plantilla.docx
+    default-image-alignment: center
+
+execute:
+  echo: false
+  warning: false
+  message: false
+  error: false
+---
+
+```{r}
+#|echo: false
+#|wwarning: false
+#|message: false
+#|error: false
+
+library(rio)
+library(tidyverse)
+library(gt)
+text <- import("texto/text_report.xlsx")
+semana_ano <- paste0(text$Semana, "-", text$Ano)
+parrafo1 <- min(text$Parrafo1)
+parrafo2 <- min(text$Parrafo2)
+parrafo3 <- min(text$Parrafo3)
+
+```
+
+# Reporte de Alerta Tempran de Dengue
+
+# **SE: `r semana_ano`**
+
+<br>
+
+<br>
+
+## Casos totales y cambio porcentual semanal
+
+`r parrafo1`
+
+<br>
+
+## **Grafico N°1: Número de casos y cambio porcentual en Dengue, por semana epidemiológica. SE: `r semana_ano`**
+
+<br>
+
+![](graficos/tendencia.png) <br>
+
+<br>
+
+<br>
+
+## Aparición de casos de dengue
+
+`r parrafo2`
+
+<br>
+
+## Señales de Alerta temprana
+
+`r parrafo3`
+
+<br>
+
+## **Grafico N°2: Señales de Aleerta temprana en Dengue. SE: 31-2024, Perú.**
+
+![](graficos/mapa_word.png){fig-align="center"}
+
+<br>
+
+## **Tabla N°1: Indicadores de Alerta Temprana de Dengue. SE: `r semana_ano`**
+
+<br>
+
+![](graficos/tabla1.png)

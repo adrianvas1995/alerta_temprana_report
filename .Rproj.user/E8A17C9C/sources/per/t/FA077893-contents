@@ -1,0 +1,25 @@
+---
+title: "Informe Semanal del Sistema de Alerta Temprana para el Control del Dengue"
+format: docx
+execute:
+  echo: false
+  warning: false
+  message: false
+  error: false
+---
+
+```{r}
+library(rio)
+text <- import("texto/text_report.xlsx")
+semana_ano <- paste0(text$Semana,"-",text$Ano)
+parrafo1 <- min(text$Parrafo1)
+parrafo2 <- min(text$Parrafo2)
+```
+
+`r parrafo1`
+
+**Grafico N°1: Señal de alarma y Tendencia de casos de Dengue, Perú `r semana_ano`** ![](graficos/grafico1.png){fig-align="center"}
+
+`r parrafo2`
+
+**Tabla N°1: Indicadores epidemiologicos del sistema de **![](graficos/tabla_1.png){fig-align="center"}

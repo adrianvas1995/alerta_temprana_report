@@ -1,0 +1,5 @@
+"0","library(rio)"
+"0","text <- import(""texto/text_report.xlsx"")"
+"0","semana_ano <- paste0(text$Semana,""-"",text$Ano)"
+"0","parrafo1 <- min(text$Parrafo1)"
+"0","parrafo2 <- min(text$Parrafo2)"
